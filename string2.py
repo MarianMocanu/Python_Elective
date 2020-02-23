@@ -32,7 +32,7 @@ def verbing(s):
 def not_bad(s):
   notIndex = s.find('not')
   badIndex = s.find('bad')
-  if notIndex < badIndex :
+  if notIndex < badIndex and notIndex != -1 :
     s = s.replace(s[notIndex : badIndex + 3], 'good')
   return s
 
@@ -80,6 +80,7 @@ def main():
   test(not_bad('This dinner is not that bad!'), 'This dinner is good!')
   test(not_bad('This tea is not hot'), 'This tea is not hot')
   test(not_bad("It's bad yet not"), "It's bad yet not")
+  test(not_bad("It's bad yet"), "It's bad yet")
 
   print()
   print ('front_back')
