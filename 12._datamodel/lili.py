@@ -100,12 +100,6 @@ class LinkedList:
 
         raise ValueError(f'{type(self).__name__} can only be indexed with integers or slices (not {type(key)})')
 
-    def __add__(self, other):
-            for element in enumerate(self):
-                if element.next is None:
-                    element.next == other
-                
-
 
 lili = LinkedList()
 lili.head = Node(1)

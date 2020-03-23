@@ -34,6 +34,7 @@ print_words() and print_top().
 """
 
 import sys
+import time
 
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
@@ -78,6 +79,19 @@ def print_top(filename):
         print(word[0], ':', word[1])
 
 
+def time_it(function):
+    def wrapper(*args):
+        start = time.time()
+        function(*args)
+        end = time.time()
+        print(f'Execution of function took: {end - start}')
+
+        # return function(*args)
+
+    return wrapper
+
+
+@time_it
 def main():
     if len(sys.argv) != 3:
         print('usage: python words.py {--count | --topcount} file')
@@ -92,6 +106,9 @@ def main():
     else:
         print('unknown option: ' + option)
         sys.exit(1)
+
+
+
 
 
 main()
