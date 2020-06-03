@@ -1,0 +1,256 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Mandatory Assignment 1 - \"Introduction to Python\" Spring 2020\n",
+    "\n",
+    "**The following assignments should be done in this Notebook, and Handed in as a .ipynp on fronter in the hand in folder.**\n",
+    "\n",
+    "**Choose to do the tasks you find the easiest fist and do as much as you find possible.**\n",
+    "\n",
+    "**You have one hour for all 3 assignments.**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Springer Books"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "On this link you can see a list of books from the publishing house \"Springer\".\n",
+    "\n",
+    "https://docs.google.com/spreadsheets/d/1HzdumNltTj2SHmCv3SRdoub8SvpIEn75fa4Q23x0keU/htmlview#gid=793911758\n",
+    "\n",
+    "You can see the same data in [this csv file](springer.csv).\n",
+    "\n",
+    "\n",
+    "\n",
+    "In this assignment you should download all pdf files off books belonging to the \"English Package Name = Computer Science\" category."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {
+    "scrolled": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Introduction to Evolutionary Computing', 'A.E. Eiben, J.E. Smith', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-662-44874-8']\n",
+      "['Data Structures and Algorithms with Python', 'Kent D. Lee, Steve Hubbard', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-13072-9']\n",
+      "['LaTeX in 24 Hours', 'Dilip Datta', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-47831-9']\n",
+      "['Automata and Computability', 'Dexter C. Kozen', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-1-4612-1844-9']\n",
+      "['The Algorithm Design Manual', 'Steven S Skiena', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-1-84800-070-4']\n",
+      "['Principles of Data Mining', 'Max Bramer', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-1-4471-7307-6']\n",
+      "['Fundamentals of Business Process Management', 'Marlon Dumas, Marcello La Rosa, Jan Mendling, Hajo A. Reijers', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-642-33143-5']\n",
+      "['UML @ Classroom', 'Martina Seidl, Marion Scholz, Christian Huemer, Gerti Kappel', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-12742-2']\n",
+      "['Foundations for Designing User-Centered Systems', 'Frank E. Ritter, Gordon D. Baxter, Elizabeth F. Churchill', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-1-4471-5134-0']\n",
+      "['Computer Vision', 'Richard Szeliski', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-1-84882-935-0']\n",
+      "['Data Mining', 'Charu C. Aggarwal', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-14142-8']\n",
+      "['Computational Geometry', 'Mark de Berg, Otfried Cheong, Marc van Kreveld, Mark Overmars', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-540-77974-2']\n",
+      "['Cryptography Made Simple', 'Nigel Smart', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-21936-3']\n",
+      "['Eye Tracking Methodology', 'Andrew T. Duchowski', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-57883-5']\n",
+      "['The Data Science Design Manual', 'Steven S. Skiena', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-55444-0']\n",
+      "['An Introduction to Machine Learning', 'Miroslav Kubat', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-63913-0']\n",
+      "['Guide to Discrete Mathematics', \"Gerard O'Regan\", 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-44561-8']\n",
+      "['Modelling Computing Systems', 'Faron Moller, Georg Struth', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-1-84800-322-4']\n",
+      "['Understanding Cryptography', 'Christof Paar, Jan Pelzl', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-642-04101-3']\n",
+      "['Concise Guide to Software Engineering', \"Gerard O'Regan\", 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-57750-0']\n",
+      "['Fundamentals of Multimedia', 'Ze-Nian Li, Mark S. Drew, Jiangchuan Liu', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-05290-8']\n",
+      "['The Python Workbook', 'Ben Stephenson', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-14240-1']\n",
+      "['Recommender Systems', 'Charu C. Aggarwal', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-29659-3']\n",
+      "['Python Programming Fundamentals', 'Kent D. Lee', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-1-4471-6642-9']\n",
+      "['Object-Oriented Analysis, Design and Implementation', 'Brahma Dathan, Sarnath Ramnath', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-24280-4']\n",
+      "['Introduction to Data Science', 'Laura Igual, Santi Seguí', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-50017-1']\n",
+      "['Concise Guide to Databases', 'Peter Lake, Paul Crowther', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-1-4471-5601-7']\n",
+      "['Digital Image Processing', 'Wilhelm Burger, Mark J. Burge', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-1-4471-6684-9']\n",
+      "['Guide to Computer Network Security', 'Joseph Migga Kizza', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-55606-2']\n",
+      "['Foundations of Programming Languages', 'Kent D. Lee', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-70790-7']\n",
+      "['Probability and Statistics for Computer Science', 'David Forsyth', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-64410-3']\n",
+      "['Guide to Competitive Programming', 'Antti Laaksonen', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-72547-5']\n",
+      "['Introduction to Artificial Intelligence', 'Wolfgang Ertel', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-58487-4']\n",
+      "['Introduction to Deep Learning', 'Sandro Skansi', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-73004-2']\n",
+      "[\"A Beginner's Guide to Scala, Object Orientation and Functional Programming\", 'John Hunt', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-75771-1']\n",
+      "['Fundamentals of Business Process Management', 'Marlon Dumas, Marcello La Rosa, Jan Mendling, Hajo A. Reijers', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-662-56509-4']\n",
+      "['Guide to Scientific Computing in C++', 'Joe Pitt-Francis, Jonathan Whiteley', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-73132-2']\n",
+      "['Fundamentals of Java Programming', 'Mitsunori Ogihara', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-89491-1']\n",
+      "['Logical Foundations of Cyber-Physical Systems', 'André Platzer', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-63588-0']\n",
+      "['Introduction to Programming with Fortran', 'Ian Chivers, Jane Sleightholme', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-75502-1']\n",
+      "['Neural Networks and Deep Learning', 'Charu C. Aggarwal', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-94463-0']\n",
+      "['Data Science and Predictive Analytics', 'Ivo D. Dinov', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-72347-1']\n",
+      "['Systems Programming in Unix/Linux', 'K.C. Wang', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-92429-8']\n",
+      "['Introduction to Parallel Computing', 'Roman Trobec, Boštjan Slivnik, Patricio Bulić, Borut Robič', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-98833-7']\n",
+      "['Analysis for Computer Scientists', 'Michael Oberguggenberger, Alexander Ostermann', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-91155-7']\n",
+      "['Introductory Computer Forensics', 'Xiaodong Lin', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-030-00581-8']\n",
+      "['Java in Two Semesters', 'Quentin Charatan, Aaron Kans', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-319-99420-8']\n",
+      "['A Beginners Guide to Python 3 Programming', 'John Hunt', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-030-20290-3']\n",
+      "['Advanced Guide to Python 3 Programming', 'John Hunt', 'Computer Science', 'http://link.springer.com/openurl?genre=book&isbn=978-3-030-25943-3']\n"
+     ]
+    }
+   ],
+   "source": [
+    "import csv\n",
+    "\n",
+    "with open(\"springer.csv\", encoding=\"utf8\") as file:\n",
+    "    csv_reader = csv.reader(file, delimiter=',')\n",
+    "    for row in csv_reader:\n",
+    "        if row[2] == \"Computer Science\":\n",
+    "            print(row)\n",
+    "   \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Ceasar encryption"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "In a Caesar encryption one moves all characters in a string N positions “forward” in the alphabet. So if the encryption N is 4,\n",
+    "\n",
+    "    'a' becomes 'e' and\n",
+    "    'm' becomes 'q'.\n",
+    "\n",
+    "If the “forward move” exits the alphabet (like 'z' + 20) it wraps around.\n",
+    "\n",
+    "\n",
+    "### Task:\n",
+    "\n",
+    "    Code a Caesar encryption algorithm.\n",
+    "    Code a decryption algorithm."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Test:\n",
+    "\n",
+    "Encrypt and afterwards decrypt\n",
+    "\n",
+    "    'thequickbrownfoxjumpsoverthelazydog', N=4.\n",
+    "    'It all started 6 weeks ago. A truck, loaded with stripped gun parts got jack'd outside of Queens', N = 5\n",
+    "    'Æbletærte er et lækkert alternative til rød grød med fløde', N=6\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Library code"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "> Create the library code for this client code output. \n",
+    "\n",
+    "As it is now, it is not pythonic.   \n",
+    "Some parts of the code would reveal that it is a Java programmer that have written the code.   \n",
+    "When you create the library code you should fix these mistakes and make it pythonic.                       "
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "metadata": {},
+   "source": [
+    ">>> bar = Bar() \n",
+    "Traceback (most recent call last):\n",
+    "    File \"<stdin>\", line 1, in <module>\n",
+    "TypeError: __init__() missing 2 required positional arguments: 'x' and 'y'\n",
+    "\n",
+    ">>> bar = Bar('Hello', 'World')\n",
+    "Traceback (most recent call last):\n",
+    "Traceback (most recent call last):\n",
+    "    File \"<stdin>\", line 1, in <module>\n",
+    "File \"property_client.py\", line 5, in __init__\n",
+    "    self.set_x(x)\n",
+    "File \"property_client.py\", line 29, in set_x\n",
+    "    raise TypeError('x has to be an \"int\"')\n",
+    "TypeError: x has to be an \"int\"\n",
+    "\n",
+    ">>> bar = Bar(12, 'There')\n",
+    ">>> bar.y = 123 \n",
+    ">>> bar.set_x(1024)\n",
+    ">>> bar.get_x()\n",
+    "1024\n",
+    "\n",
+    ">>> bar\n",
+    "{'_Bar__x': 12, 'y': 'There'}\n",
+    "\n",
+    ">>> str(bar)\n",
+    "'x = 12, y = There'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.1"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": false,
+   "sideBar": true,
+   "skip_h1_title": true,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {},
+   "toc_section_display": true,
+   "toc_window_display": false
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

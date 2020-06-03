@@ -1,0 +1,15 @@
+Lesson-01-intro-to-python
+python-elective-fall-2019.github.io
+Lesson-02-Data-structures
+Lesson-03-Utillities-modules-Virtual-Enviroment
+Lesson-04-OOP-Basics
+Lesson-05-OOP-Encasulation
+magicmethods
+Lesson-06-OOP-Python-Protocols
+property_example
+Lesson-07-decorators
+Lesson-8-generators
+Lesson-09-context-managers
+Lesson-10-tips-tricks
+Lesson-11-sorting-algorithms
+exam-code-templates

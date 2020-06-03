@@ -5,7 +5,6 @@ def clear(): return os.system("cls")
 def time_it(function):
     def wrapper(*args):
         start = time.time()
-        # time.sleep(1)
         function(*args)
         end = time.time()
         print(f'Execution of function took: {end - start}')
@@ -20,5 +19,3 @@ def add(*args):
     for arg in args:
         sum += arg
     return sum
-
-add(1,2,3)
